@@ -2,6 +2,7 @@ package com.simpleuuid
 
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
+import java.util.UUID
 
 @ReactModule(name = SimpleUuidModule.NAME)
 class SimpleUuidModule(reactContext: ReactApplicationContext) :
@@ -11,10 +12,8 @@ class SimpleUuidModule(reactContext: ReactApplicationContext) :
     return NAME
   }
 
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
-  override fun multiply(a: Double, b: Double): Double {
-    return a * b
+  override fun v4(): String {
+    return UUID.randomUUID().toString();
   }
 
   companion object {
